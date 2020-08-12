@@ -1,75 +1,52 @@
-import React from 'react';
-import {withRouter} from 'react-router-dom';
+import React, {useState} from "react";
+import {useHistory} from "../../Router";
 
-class LogIn extends React.Component {
-  state = {
-    name: '',
-    password: '',
-    errorMessage: null
-  };
+export default function LogIn() {
+  const [name, setName] = useState("");
+  const [password, setPassword] = useState("");
 
-  render = () => {
-    return (
-      <div className="login">
-        <h1>ПСТИ</h1>
-        <p>Страница входа</p>
-        <a href={"/log-in"} className="department-link">Link</a>
-        <form>
-          {this.renderErrorMessage()}
-          <div className="text-field">
-            <input
-              type="text"
-              className={this.state.name ? 'is-active': null}
-              placeholder="Имя пользователя"
-              onChange={this.onEmailFieldChange}
-              value={this.state.name}/>
-            <span>Логин</span>
-          </div>
-          <div className="text-field">
-            <input
-              type="password"
-              className={this.state.password ? 'is-active': null}
-              placeholder="Ввести пароль"
-              onChange={this.onPasswordFieldChange}
-              value={this.state.password}/>
-            <span>Пароль</span>
-          </div>
-          <button
-            className="button"
-            onClick={this.onLoginClick}>
-            Войти
-          </button>
-        </form>
-      </div>
-    )
-  };
-
-  renderErrorMessage() {
-    return this.state.errorMessage ?
-      <div className="error-message">{this.state.errorMessage}</div> : null;
+  function validateForm() {
+    return name.length > 0 && password.length > 0;
   }
 
-  onEmailFieldChange = (event) => {
-    const name = event.target.value;
-    this.setState({name});
-  };
-
-  onPasswordFieldChange = (event) => {
-    const password = event.target.value;
-    this.setState({password});
-  };
-
-  onLoginClick = (event) => {
+  async function handleSubmit(event) {
     event.preventDefault();
-    const data = {name: this.state.name, password: this.state.password};
-    localStorage.setItem('name', data.name);
-    const errorMessage = data.name && data.password ? null : data.name ? 'Введите пароль' :
-      data.password ? 'Введите имя' : 'Введите имя и пароль';
-      this.setState({errorMessage});
-    if ((this.state.name !== 'admin') && (this.state.password !=='admin'))
-      return;
-    this.props.history.push('/main');
-  };
+    try {
+      await localStorage.setItem('user', name);
+      useHistory.push("/");
+    } catch (e) {
+    }
+  }
+  return (
+    <div className="login">
+      <p>Страница входа</p>
+      <a href={"/log-in"} className="department-link">Link</a>
+      <form onSubmit={handleSubmit}>
+        <div className="text-field">
+          <input
+            autoFocus
+            type="text"
+            value={name}
+            onChange={e => setName(e.target.value)}
+          />
+          <span>Логин</span>
+        </div>
+        <div className="text-field">
+          <input
+            type="password"
+            value={password}
+            onChange={e => setPassword(e.target.value)}
+          />
+          <span>Пароль</span>
+        </div>
+        <button
+          type="submit"
+          className="button"
+          disabled={!validateForm()}
+        >
+          Войти
+        </button>
+      </form>
+    </div>
+  )
 }
-
-export default withRouter(LogIn);

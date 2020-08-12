@@ -12,7 +12,7 @@ class LogIn extends React.Component {
     return (
       <div className="login">
         <h1>ПСТИ</h1>
-        <p>Подсистема сбора телеметрической информации</p>
+        <p>Страница входа</p>
         <a href={"/log-in"} className="department-link">Link</a>
         <form>
           {this.renderErrorMessage()}

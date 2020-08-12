@@ -1,0 +1,66 @@
+%flex-center {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+%text-md {
+  @include font($text-md-font-size, $text-md-line-height);
+}
+
+%text-sm {
+  @include font($text-sm-font-size, $text-sm-line-height);
+}
+
+%text-xs {
+  @include font($text-xs-font-size, $text-xs-line-height);
+}
+
+%text-xxs {
+  font-size: $text-xxs-font-size;
+}
+
+%scroll {
+  &::-webkit-scrollbar {
+    width: 6px;
+    height: 0;
+    background: $scroll-bar-grey;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $light-grey;
+    border-radius: 10px;
+  }
+}
+
+%scroll-horizontal {
+  &::-webkit-scrollbar {
+    height: 6px;
+    border-radius: 0;
+    background: $scroll-bar-grey;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    height: 6px;
+    border-radius: 10px;
+    background: $main-blue;
+  }
+}
+
+%hide {
+  visibility: hidden;
+  opacity: 0;
+}
+
+%show {
+  visibility: visible;
+  opacity: 1;
+}

@@ -1,0 +1,57 @@
+$white:                    #ffffff;
+$main-black:               #101010;
+$grey:                     #CCCCCC;
+$light-grey:               #EEEEEE;
+$main-light-grey:          #D6D9E4;
+$main-dark-grey:           #323232;
+$dark-grey:                #505050;
+$border-grey:              #EBEFF2;
+$text-grey:                #707070;
+$scroll-bar-grey:          #FAFAFA;
+$body-grey:                #E5E5E5;
+$button-grey:              #F7F7F7;
+$icon-grey:                rgba(0, 0, 0, 0.1);
+$icon-darken-grey:         rgba(0, 0, 0, 0.2);
+$label-grey:               #C0C1C2;
+$row-grey:                 #F1F1F1;
+$main-blue:                #613EEA;
+$main-light-blue:          #3BB8F0;
+$table-light-blue:         rgba(59, 184, 240, 0.4);
+$main-green:               #8ED000;
+$light-green:              #5aa158;
+$main-light-green:         rgba(150, 200, 0, 0.4);
+$main-red:                 #FF5F2C;
+$main-light-red:           #feb898;
+$main-orange:              #FFA800;
+$main-light-orange:        rgba(255, 168, 0, 0.4);
+$main-yellow:              #FEDA00;
+$main-light-yellow:        rgba(239, 200, 0, 0.4);
+$main-violet:              #A154F2;
+
+$body-bg:                  $white;
+$body-color:               $main-black;
+
+$link-color:               $main-black;
+
+$font-family-base:         'Noto Sans', sans-serif;
+$font-size-base:           16px;
+$line-height-base:         18px;
+
+
+$h1-font-size:             $font-size-base * 2.75; // 44
+$h1-line-height:           $line-height-base * 3.112; // 56
+
+$text-lg-font-size:        $font-size-base * 1.875; // 30
+
+$text-md-font-size:        $font-size-base * 1.125; // 18
+$text-md-line-height:      $line-height-base * 1.223; // 22
+
+$text-sm-font-size:        $font-size-base * .875; // 14
+$text-sm-line-height:      $line-height-base * .778; // 14
+
+$text-xs-font-size:        $font-size-base * .75; // 12
+$text-xs-line-height:      $line-height-base * .667; // 12
+
+$text-xxs-font-size:       $font-size-base * .625; // 10
+
+$font-size-13:             $font-size-base * .8125; // 13

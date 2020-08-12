@@ -1,0 +1,67 @@
+@mixin font($size, $height) {
+  font-size: $size;
+  line-height: $height;
+}
+
+@mixin position-lt($position, $left, $top) {
+  position: $position;
+  left: $left;
+  top: $top;
+}
+
+@mixin position-rt($position, $right, $top) {
+  position: $position;
+  right: $right;
+  top: $top;
+}
+
+@mixin transition($prop) {
+  -webkit-transition: $prop .3s;
+  -o-transition: $prop .3s;
+  transition: $prop .3s;
+}
+
+@mixin flex($flex:'flex', $justify:'flex-start', $align:'flex-start') {
+  @if $flex == 'flex' {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  } @else {
+    display: $flex;
+  }
+
+  @if $justify == 'flex-start' {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  } @else {
+    -webkit-box-pack: $justify;
+        -ms-flex-pack: $justify;
+            justify-content: $justify;
+  }
+
+  @if $align == 'flex-start' {
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  } @else {
+    -webkit-box-align: $align;
+        -ms-flex-align: $align;
+            align-items: $align;
+  }
+}
+
+@mixin round($size) {
+  width: $size;
+  height: $size;
+  border-radius: 50%;
+}
+
+@mixin btn-bg($color, $hover-color) {
+  background: $color;
+  @include transition(background);
+
+  &:hover, &:active {
+    background: $hover-color;
+  }
+}

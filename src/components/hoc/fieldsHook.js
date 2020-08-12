@@ -1,15 +1,17 @@
 import { useState } from "react";
 
-export function useFormFields(initialState) {
-  const [fields, setValues] = useState(initialState);
+export const useInput = (initialValue) => {
+  const [value, setValue] = useState(initialValue);
 
-  return [
-    fields,
-    function(event) {
-      setValues({
-        ...fields,
-        [event.target.value]: event.target.value
-      });
+  return {
+    value,
+    setValue,
+    reset: () => setValue(""),
+    bind: {
+      value,
+      onChange: event => {
+        setValue(event.target.value);
+      }
     }
-  ];
-}
+  };
+};

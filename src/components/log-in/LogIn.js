@@ -2,7 +2,7 @@ import React from "react";
 import {useHistory} from "../../Router";
 import {useInput} from "../hoc/fieldsHook";
 
-export default function LogIn(props) {
+export default function LogIn() {
   const { value:name, bind:bindName, reset:resetName } = useInput('');
   const { value:password, bind:bindPassword, reset:resetPassword } = useInput('');
 
@@ -22,9 +22,8 @@ export default function LogIn(props) {
   }
   return (
     <div className="login">
-      <p>Страница входа</p>
-      <a href={"/log-in"} className="department-link">Link</a>
       <form onSubmit={handleSubmit}>
+        <p>Регистрация</p>
         <div className="text-field">
           <input
             autoFocus

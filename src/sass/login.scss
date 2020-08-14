@@ -6,42 +6,27 @@
   min-height: 100vh;
   padding: 16px;
   position: relative;
-  background-color: #CCCCCC;
-  background-size: cover;
-  @extend %flex-center;
-
-  h1 {
-    width: 290px;
-    height: 77px;
-    overflow: hidden;
-    margin-bottom: 30px;
-    position: relative;
-    text-indent: -999rem;
-
-    & + p {
-      margin-bottom: 30px;
-      text-align: center;
-      color: $main-dark-grey;
-      @extend %text-md;
-    }
-  }
+  background: url(../static/Group1.svg) no-repeat;
+  background-size: contain;
 
   form {
     width: 100%;
-    max-width: 580px;
+    max-width: 49%;
     padding: 40px 20px;
     border-radius: 3px;
     background: $white;
     -webkit-box-shadow: 0 4px 26px rgba(0, 0, 0, 0.06);
             box-shadow: 0 4px 26px rgba(0, 0, 0, 0.06);
+    & p {
+      margin-bottom: 30px;
+      font-size: 2rem;
+      text-align: center;
+      color: $main-dark-grey;
+    }
   }
 
   .button {
+    cursor: pointer;
     width: 100%;
-  }
-
-  .error-message {
-    padding: 0 20px;
-    margin-bottom: 20px;
   }
 }
